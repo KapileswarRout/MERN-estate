@@ -26,7 +26,7 @@ export const signin = async (req, res, next) => {
     //remove sensitive information from raw data
     const {password: pass, ...userWithoutPassword} = validUser._doc 
     res
-      .cookie("accessToken", token, { httpOnly: true }) //no other thirdparty app can have acces to our cookie by httpOnly 
+      .cookie("access_token", token, { httpOnly: true }) //no other thirdparty app can have acces to our cookie by httpOnly 
       .status(200)
       .json(userWithoutPassword);
   } catch (error) {
